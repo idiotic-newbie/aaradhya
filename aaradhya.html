@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaradhya - Premium Studio Apartments | ACC Real Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'olive': '#808000',
+                        'light-yellow': '#FFFFE0',
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .apartment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #808000;
+            box-shadow: 0 0 0 3px rgba(128, 128, 0, 0.2);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+        }
+        
+        .nav-link:hover {
+            color: #FFFFE0 !important;
+        }
+        
+        .amenity-icon {
+            font-size: 2rem;
+            color: #808000;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-olive text-white shadow-lg z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="flex items-center">
+                        <img src="https://via.placeholder.com/50x50?text=ACC" alt="ACC Logo" class="h-10">
+                        <span class="ml-2 text-xl font-bold">Aaradhya</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Home</a>
+                    <a href="#about" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">About</a>
+                    <a href="#apartments" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Apartments</a>
+                    <a href="#amenities" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Amenities</a>
+                    <a href="#gallery" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Gallery</a>
+                    <a href="#contact" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Contact</a>
+                    <a href="#contact" class="bg-light-yellow text-olive font-bold py-2 px-6 rounded-full hover:bg-yellow-200 transition duration-300">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden">
+                <div class="flex flex-col space-y-2 mt-4">
+                    <a href="#home" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Home</a>
+                    <a href="#about" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">About</a>
+                    <a href="#apartments" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Apartments</a>
+                    <a href="#amenities" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Amenities</a>
+                    <a href="#gallery" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Gallery</a>
+                    <a href="#contact" class="nav-link py-2 px-3 rounded hover:bg-opacity-20 hover:bg-white transition duration-300">Contact</a>
+                    <a href="#contact" class="bg-light-yellow text-olive font-bold py-2 px-6 rounded-full hover:bg-yellow-200 transition duration-300 text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6 pt-24 pb-12">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Aaradhya Residences</h1>
+            <p class="text-xl md:text-2xl mb-8">Premium G+2 Fully Furnished Studio Apartments</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="bg-olive hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full transition duration-300">Enquire Now</a>
+                <a href="#apartments" class="bg-light-yellow hover:bg-yellow-200 text-olive font-bold py-3 px-8 rounded-full transition duration-300">View Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-light-yellow">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">About Aaradhya</h2>
+                <div class="w-20 h-1 bg-olive mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Aaradhya Building" class="w-full rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Premium Living Redefined</h3>
+                    <p class="text-gray-700 mb-4">Aaradhya by ACC Real Estate brings you thoughtfully designed G+2 fully furnished studio apartments that combine modern aesthetics with functional living. Located in the heart of the city, Aaradhya offers the perfect blend of comfort, convenience, and contemporary style.</p>
+                    <p class="text-gray-700 mb-6">Each apartment is meticulously crafted with high-quality materials and finishes, ensuring a living space that's both beautiful and durable. Our residents enjoy a host of premium amenities and a vibrant community atmosphere.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-olive mr-2"></i>
+                            <span>24/7 Security</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-olive mr-2"></i>
+                            <span>Fully Furnished</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-olive mr-2"></i>
+                            <span>Prime Location</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-olive mr-2"></i>
+                            <span>Modern Amenities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartments Section -->
+    <section id="apartments" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">Our Apartments</h2>
+                <div class="w-20 h-1 bg-olive mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Choose from our carefully designed studio apartment plans, each offering a unique living experience tailored to your needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Apartment 1 -->
+                <div class="apartment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Studio Plan A" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-olive text-white px-3 py-1 rounded-full text-sm font-bold">Plan A</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Compact Studio</h3>
+                        <p class="text-gray-600 mb-4">Perfect for singles or couples looking for a cozy, efficient space.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-olive font-bold text-lg">₹12,500</span>
+                                <span class="text-gray-500 text-sm">/month</span>
+                            </div>
+                            <span class="text-gray-500">320 sq.ft</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-bed text-olive mr-2"></i>
+                                <span>1 Bed</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bath text-olive mr-2"></i>
+                                <span>1 Bath</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-utensils text-olive mr-2"></i>
+                                <span>Kitchenette</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-couch text-olive mr-2"></i>
+                                <span>Furnished</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-olive hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded transition duration-300">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Apartment 2 -->
+                <div class="apartment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Studio Plan B" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-olive text-white px-3 py-1 rounded-full text-sm font-bold">Plan B</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Deluxe Studio</h3>
+                        <p class="text-gray-600 mb-4">Spacious studio with premium finishes and additional storage.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-olive font-bold text-lg">₹15,800</span>
+                                <span class="text-gray-500 text-sm">/month</span>
+                            </div>
+                            <span class="text-gray-500">420 sq.ft</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-bed text-olive mr-2"></i>
+                                <span>1 Bed</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bath text-olive mr-2"></i>
+                                <span>1 Bath</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-utensils text-olive mr-2"></i>
+                                <span>Full Kitchen</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-warehouse text-olive mr-2"></i>
+                                <span>Storage</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-olive hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded transition duration-300">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Apartment 3 -->
+                <div class="apartment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Studio Plan C" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-olive text-white px-3 py-1 rounded-full text-sm font-bold">Plan C</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Studio</h3>
+                        <p class="text-gray-600 mb-4">Luxury studio with premium amenities and workspace area.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-olive font-bold text-lg">₹18,900</span>
+                                <span class="text-gray-500 text-sm">/month</span>
+                            </div>
+                            <span class="text-gray-500">520 sq.ft</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-bed text-olive mr-2"></i>
+                                <span>1 Bed</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bath text-olive mr-2"></i>
+                                <span>1.5 Bath</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-utensils text-olive mr-2"></i>
+                                <span>Full Kitchen</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-laptop-house text-olive mr-2"></i>
+                                <span>Work Area</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-olive hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded transition duration-300">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-light-yellow hover:bg-yellow-200 text-olive font-bold py-3 px-8 rounded-full transition duration-300">Schedule a Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">Our Amenities</h2>
+                <div class="w-20 h-1 bg-olive mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Aaradhya offers an array of premium amenities designed to enhance your living experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Amenity 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Swimming Pool</h3>
+                    <p class="text-gray-600">Relax and unwind in our temperature-controlled swimming pool.</p>
+                </div>
+                
+                <!-- Amenity 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Fitness Center</h3>
+                    <p class="text-gray-600">State-of-the-art gym with cardio and strength training equipment.</p>
+                </div>
+                
+                <!-- Amenity 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Rooftop Lounge</h3>
+                    <p class="text-gray-600">Stunning rooftop space with panoramic city views.</p>
+                </div>
+                
+                <!-- Amenity 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">High-Speed WiFi</h3>
+                    <p class="text-gray-600">Complimentary high-speed internet throughout the property.</p>
+                </div>
+                
+                <!-- Amenity 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Secure Parking</h3>
+                    <p class="text-gray-600">Dedicated parking spaces with 24/7 security monitoring.</p>
+                </div>
+                
+                <!-- Amenity 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Green Spaces</h3>
+                    <p class="text-gray-600">Beautifully landscaped gardens and outdoor seating areas.</p>
+                </div>
+                
+                <!-- Amenity 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Concierge</h3>
+                    <p class="text-gray-600">Dedicated staff to assist with your needs and requests.</p>
+                </div>
+                
+                <!-- Amenity 8 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition duration-300">
+                    <div class="amenity-icon mb-4">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Bike Storage</h3>
+                    <p class="text-gray-600">Secure storage for bicycles with repair station.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">Gallery</h2>
+                <div class="w-20 h-1 bg-olive mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Take a visual journey through Aaradhya's exquisite spaces and amenities.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Living Area" class="w-full h-64 object-cover gallery-image transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Bedroom" class="w-full h-64 object-cover gallery-image transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Kitchen" class="w-full h-64 object-cover gallery-image transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Bathroom" class="w-full h-64 object-cover gallery-image transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pool Area" class="w-full h-64 object-cover gallery-image transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Gym" class="w-full h-64 object-cover gallery-image transition duration-500">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-olive hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full transition duration-300">View More Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-light-yellow">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">What Our Residents Say</h2>
+                <div class="w-20 h-1 bg-olive mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Resident since 2022</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Living at Aaradhya has been an absolute pleasure. The attention to detail in the design and the quality of finishes is exceptional. The location is perfect with everything I need within walking distance."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Resident since 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The amenities at Aaradhya are top-notch. I especially love the rooftop lounge where I can unwind after work. The management team is responsive and always willing to help with any requests."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Patel" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Priya Patel</h4>
+                            <p class="text-gray-600 text-sm">Resident since 2021</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"As someone who works from home, the dedicated workspace in my apartment has been a game-changer. The building is always clean and well-maintained, and the neighbors are friendly."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-olive mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Get in touch with our team to schedule a visit or learn more about Aaradhya residences.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-light-yellow p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                        <form class="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-olive">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-olive">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-olive">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-olive"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-olive hover:bg-opacity-90 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-olive text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Address</h4>
+                                    <p class="text-gray-600">123 Urban Avenue, City Center<br>Bangalore, Karnataka 560001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-olive text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+91 98765 43210<br>+91 80 1234 5678</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-olive text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@aaradhyaresidences.com<br>sales@aaradhyaresidences.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-olive text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9am - 7pm<br>Saturday: 10am - 5pm<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-olive text-white p-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-olive text-white p-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-olive text-white p-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-olive text-white p-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map Section -->
+    <section class="bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="py-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-olive mb-4">Location</h2>
+                    <div class="w-20 h-1 bg-olive mx-auto"></div>
+                </div>
+                
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <!-- Embedded Google Map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0130749445316!2d77.59427731482189!3d12.971646990856514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf5df53c9e4a7c9a0!2sBangalore%20City%20Railway%20Station!5e0!3m2!1sen!2sin!4v1629475835028!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Nearby Amenities</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-shopping-bag text-olive mr-2"></i>
+                                <span>City Mall - 5 min walk</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-subway text-olive mr-2"></i>
+                                <span>Metro Station - 8 min walk</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-parking text-olive mr-2"></i>
+                                <span>Public Parking - 3 min walk</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-utensils text-olive mr-2"></i>
+                                <span>50+ Restaurants nearby</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Transportation</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-bus text-olive mr-2"></i>
+                                <span>Bus Stop - 2 min walk</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-taxi text-olive mr-2"></i>
+                                <span>Taxi Stand - 1 min walk</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-bicycle text-olive mr-2"></i>
+                                <span>Bike Share - Onsite</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-car text-olive mr-2"></i>
+                                <span>Easy highway access</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Essential Services</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-hospital text-olive mr-2"></i>
+                                <span>City Hospital - 10 min drive</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-school text-olive mr-2"></i>
+                                <span>International School - 15 min drive</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-shopping-cart text-olive mr-2"></i>
+                                <span>Supermarket - 5 min walk</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-landmark text-olive mr-2"></i>
+                                <span>Business District - 8 min drive</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-olive text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+                <p class="text-xl mb-8">Subscribe to our newsletter for the latest updates on Aaradhya residences and special offers.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-800">
+                    <button type="submit" class="bg-light-yellow hover:bg-yellow-200 text-olive font-bold py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Aaradhya</h3>
+                    <p class="text-gray-400 mb-4">Premium G+2 fully furnished studio apartments by ACC Real Estate.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#apartments" class="text-gray-400 hover:text-white transition duration-300">Apartments</a></li>
+                        <li><a href="#amenities" class="text-gray-400 hover:text-white transition duration-300">Amenities</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Refund Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                            <span class="text-gray-400">123 Urban Avenue, City Center, Bangalore, Karnataka 560001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">info@aaradhyaresidences.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 ACC Real Estate. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top bg-olive text-white p-3 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Show back-to-top button when scrolling
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        // Form submission (example)
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('form[action="#"]');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                alert(`Thank you for subscribing with ${emailInput.value}!`);
+                emailInput.value = '';
+            });
+        }
+    </script>
+</body>
+</html>
